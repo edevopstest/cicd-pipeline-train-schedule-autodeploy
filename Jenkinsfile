@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         //be sure to replace "bhavukm" with your own Docker Hub username
-        DOCKER_IMAGE_NAME = "bhavukm/train-schedule"
+        DOCKER_IMAGE_NAME = "kannanta/train-schedule"
     }
     stages {
         stage('Build') {
@@ -58,7 +58,7 @@ pipeline {
                 branch 'master'
             }
             environment { 
-                CANARY_REPLICAS = 0
+                CANARY_REPLICAS = 1
             }
             steps {
                 input 'Deploy to Production?'
